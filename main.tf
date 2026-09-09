@@ -277,7 +277,7 @@ resource "azurerm_virtual_machine_data_disk_attachment" "cces_metadata_disk" {
   managed_disk_id    = azurerm_managed_disk.cces_metadata_disk[each.value].id
   virtual_machine_id = azurerm_linux_virtual_machine.cces_node[each.value].id
   lun                = "1"
-  caching            = "ReadWrite"
+  caching            = "None"
 }
 
 resource "azurerm_managed_disk" "cces_cache_disk" {
