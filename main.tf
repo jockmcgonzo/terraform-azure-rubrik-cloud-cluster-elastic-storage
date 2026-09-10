@@ -44,7 +44,7 @@ resource "azurerm_storage_account" "cc_storage_account" {
   account_tier                  = "Standard"
   account_replication_type      = var.azure_sa_replication_type
   public_network_access_enabled = true
-
+  default_to_oauth_authentication = var.azure_sa_default_to_oauth_authentication
   blob_properties {
     versioning_enabled = var.enableImmutability
   }

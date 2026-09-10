@@ -126,6 +126,12 @@ variable "enableImmutability" {
   default     = true
 }
 
+variable "azure_sa_default_to_oauth_authentication" {
+  description = "Whether Azure Storage Account should default to OAuth Authentication in the portal"
+  type        = bool
+  default     = false  
+}
+
 # Bootstrap Information
 
 variable "admin_email" {
