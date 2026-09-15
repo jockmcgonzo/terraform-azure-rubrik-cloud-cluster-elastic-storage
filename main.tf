@@ -202,7 +202,7 @@ resource "azurerm_linux_virtual_machine" "cces_node" {
 
   os_disk {
     caching              = "ReadWrite"
-    storage_account_type = "Premium_LRS"
+    storage_account_type = "PremiumV2_LRS"
   }
 
   plan {
@@ -228,7 +228,7 @@ resource "azurerm_managed_disk" "cces_data_disk" {
   name                 = "${each.value}-disk"
   location             = azurerm_resource_group.cc_rg.location
   resource_group_name  = azurerm_resource_group.cc_rg.name
-  storage_account_type = "Premium_LRS"
+  storage_account_type = "PremiumV2_LRS"
   create_option        = "Empty"
   disk_size_gb         = "512"
   tags                 = var.azure_tags
@@ -258,7 +258,7 @@ resource "azurerm_managed_disk" "cces_metadata_disk" {
   name                 = "${each.value}-metadata-disk"
   location             = azurerm_resource_group.cc_rg.location
   resource_group_name  = azurerm_resource_group.cc_rg.name
-  storage_account_type = "Premium_LRS"
+  storage_account_type = "PremiumV2_LRS"
   create_option        = "Empty"
   disk_size_gb         = "132"
   tags                 = var.azure_tags
@@ -285,7 +285,7 @@ resource "azurerm_managed_disk" "cces_cache_disk" {
   name                 = "${each.value}-cache-disk"
   location             = azurerm_resource_group.cc_rg.location
   resource_group_name  = azurerm_resource_group.cc_rg.name
-  storage_account_type = "Premium_LRS"
+  storage_account_type = "PremiumV2_LRS"
   create_option        = "Empty"
   disk_size_gb         = "206"
   tags                 = var.azure_tags
