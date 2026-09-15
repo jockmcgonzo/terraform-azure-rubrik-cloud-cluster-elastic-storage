@@ -202,7 +202,7 @@ resource "azurerm_linux_virtual_machine" "cces_node" {
 
   os_disk {
     caching              = "ReadWrite"
-    storage_account_type = "PremiumV2_LRS"
+    storage_account_type = "Premium_LRS"
   }
 
   plan {
