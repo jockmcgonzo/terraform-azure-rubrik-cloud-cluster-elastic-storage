@@ -187,6 +187,7 @@ resource "azurerm_linux_virtual_machine" "cces_node" {
   network_interface_ids = [azurerm_network_interface.cces_nic[each.value].id]
   size                  = var.azure_cces_vm_size
   admin_username        = "azureuser"
+  zone                  = 1
 
   admin_ssh_key {
     username   = "azureuser"
